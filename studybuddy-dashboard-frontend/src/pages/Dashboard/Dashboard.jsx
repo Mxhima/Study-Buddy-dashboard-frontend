@@ -15,6 +15,7 @@ const Dashboard = () => {
         <div className="widgets">
           <Widget type="user" />
           <Widget type="lecturer" />
+          <Widget type="forum" />
         </div>
         <div className="charts">
           <Featured />
