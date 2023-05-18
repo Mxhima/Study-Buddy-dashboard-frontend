@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 import './Form.scss'
+import { db } from '../../firebase/firebase';
+import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
 
 const CustomForm = () => {
    const [formData, setFormData] = useState({

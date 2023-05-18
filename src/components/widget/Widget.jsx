@@ -2,10 +2,10 @@ import React from "react";
 import "./Widget.scss";
 import {
   Forum,
-  KeyboardArrowUp,
   PersonOutlined,
   School,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom"
 
 const Widget = ({ type }) => {
   let data;
@@ -17,7 +17,8 @@ const Widget = ({ type }) => {
     case "user":
       data = {
         title: "Users",
-        link: "See all users",
+        link: "/users",
+        subtitle: "See all users",
         isMoney: false,
         icon: (
           <PersonOutlined
@@ -33,7 +34,8 @@ const Widget = ({ type }) => {
     case "lecturer":
       data = {
         title: "Lecturers",
-        link: "See all Lecturers",
+        link: "/lecturers",
+        subtitle: "See all Lecturers",
         isMoney: false,
         icon: (
           <School
@@ -49,7 +51,8 @@ const Widget = ({ type }) => {
     case "forum":
       data = {
         title: "Forum",
-        link: "Go to Forum",
+        link: "/forum",
+        subtitle: "Go to Forum",
         isMoney: false,
         icon: (
           <Forum
@@ -73,7 +76,9 @@ const Widget = ({ type }) => {
         <span className="counter">
           {data.isMoney && "$"} {amount}
         </span>
-        <span className="link">{data.link}</span>
+        <Link to={data.link}>
+        <span className="link">{data.subtitle}</span>
+        </Link>
       </div>
       <div className="right">{data.icon}</div>
     </div>

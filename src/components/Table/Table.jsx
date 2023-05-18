@@ -80,6 +80,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Button } from "@mui/material";
 import './Table.scss'
+import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
 // import { Delete } from "@mui/icons-material";
 
 function createData(name, calories, fat, carbs, protein) {
