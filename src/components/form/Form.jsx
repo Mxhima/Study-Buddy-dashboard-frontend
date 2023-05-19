@@ -37,7 +37,7 @@ const CustomForm = () => {
          <form onSubmit={handleSubmit}>
         <TextField
           name="name"
-          label="Name"
+          label="FullName"
           value={formData.name}
           onChange={handleChange}
           required
@@ -54,15 +54,53 @@ const CustomForm = () => {
           fullWidth
           margin="normal"
         />
+        <TextField
+          name="email"
+          label="Phone"
+          type="string"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          name="email"
+          label="Faculty"
+          type="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          name="email"
+          label="Study Areas"
+          type="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          name="email"
+          label="Teaching Modules"
+          type="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          fullWidth
+          margin="normal"
+        />
         {/* Add more TextField components for additional fields */}
         <Button type="submit" variant="contained" color="primary">
           Submit
         </Button>
       </form>
       </div>
-      
+
     );
   };
-
-
 export default CustomForm

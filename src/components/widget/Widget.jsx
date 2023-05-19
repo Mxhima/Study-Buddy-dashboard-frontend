@@ -10,7 +10,6 @@ import { Link } from "react-router-dom"
 const Widget = ({ type }) => {
   let data;
 
-  const amount = 100;
   const diff = 20;
 
   switch (type) {
@@ -20,6 +19,7 @@ const Widget = ({ type }) => {
         link: "/users",
         subtitle: "See all users",
         isMoney: false,
+        amount: 100,
         icon: (
           <PersonOutlined
             className="icon"
@@ -37,6 +37,7 @@ const Widget = ({ type }) => {
         link: "/lecturers",
         subtitle: "See all Lecturers",
         isMoney: false,
+        amount: 25,
         icon: (
           <School
             className="icon"
@@ -74,7 +75,7 @@ const Widget = ({ type }) => {
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">
-          {data.isMoney && "$"} {amount}
+          {data.amount}
         </span>
         <Link to={data.link}>
         <span className="link">{data.subtitle}</span>

@@ -16,12 +16,14 @@ const Lecturers = () => {
           <div className="lecturerTable">
             <div className="lecturerTitle">
               <Grid container spacing={2}>
-                <Grid item xs={8}>
+                <Grid item xs={12}>
                   <CustomTable />
                 </Grid>
-                <Grid item xs={4}>
-                  <CustomForm />
-                </Grid>
+              </Grid>
+            </div>
+            <div className="lecturerAdd">
+              <Grid item xs={12}>
+                <CustomForm />
               </Grid>
             </div>
           </div>
