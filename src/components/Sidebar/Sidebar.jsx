@@ -43,20 +43,11 @@ const Sidebar = () => {
               <Link to="/lecturers">Lecturers</Link>
             </span>
           </li>
-          <li>
-            <AdminPeofileIcon className="icon" />
-            <span>Admin Profile</span>
-          </li>
           <hr />
           <p className="title">Settings</p>
           <li>
             <LogOutIcon className="icon" />
             <span>Log Out</span>
-          </li>
-          <li>
-            <Button href="/lecturers">
-              lecturers
-            </Button>
           </li>
         </ul>
       </div>
