@@ -2,7 +2,7 @@ import React from "react";
 import "./Lecturers.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import CustomTable from "../../components/Table/Table";
+import CustomTable from "../../components/LecturerTable/Table"
 import CustomForm from "../../components/form/Form";
 import { Grid } from "@mui/material";
 

@@ -2,7 +2,7 @@ import React from "react";
 import "./Users.scss";
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import CustomTable from "../../components/Table/Table";
+import CustomTable2 from "../../components/UserTable/UserTable"
 
 const Users = () => {
   return (
@@ -13,7 +13,7 @@ const Users = () => {
         <div className="userTable">
           <div className="userTitle">
             User Details
-            <CustomTable />
+            <CustomTable2 />
           </div>
         </div>
       </div>

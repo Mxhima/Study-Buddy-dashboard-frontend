@@ -2,44 +2,39 @@ import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
 import './Form.scss'
 import { db } from '../../firebase/firebase';
-import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from "firebase/firestore";
+import { addDoc, collection } from "firebase/firestore";
 
 const CustomForm = () => {
-   const [formData, setFormData] = useState({
-      name: '',
-      email: '',
-      // Add more fields as needed
-    });
-  
-    const handleChange = (event) => {
-      const { name, value } = event.target;
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
-    };
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      // Perform necessary actions with the form data, such as saving to a database
-      console.log(formData);
-      // Reset the form
-      setFormData({
-        name: '',
-        email: '',
-        // Reset other fields as needed
+  const lecturerCollectionRef = collection(db, "lecturers");
+
+    const [fullname, setfullname] = useState("")
+    const [email, setemail] = useState("")
+    const [phone, setphone] = useState("")
+    const [faculty, setfaculty] = useState("")
+    const [studyareas, setstudyareas] = useState("")
+    const [modules, setmodules] = useState("");
+
+    const createLecturer = async () => {
+      await addDoc(lecturerCollectionRef, {
+          fullname: fullname,
+          email: email,
+          phone: phone,
+          faculty: faculty,
+          modules: modules,
+          studyareas: studyareas,
       });
-    };
+
+      window.location.reload()
+  }
   
     return (
       <div className="formContainer">
          Add Lecturer
-         <form onSubmit={handleSubmit}>
+         <form>
         <TextField
-          name="name"
+          name="Fullname"
           label="FullName"
-          value={formData.name}
-          onChange={handleChange}
+          onChange={(e) => {setfullname(e.target.value)}}
           required
           fullWidth
           margin="normal"
@@ -48,8 +43,7 @@ const CustomForm = () => {
           name="email"
           label="Email"
           type="email"
-          value={formData.email}
-          onChange={handleChange}
+          onChange={(e) => {setemail(e.target.value)}}
           required
           fullWidth
           margin="normal"
@@ -57,45 +51,41 @@ const CustomForm = () => {
         <TextField
           name="email"
           label="Phone"
-          type="string"
-          value={formData.email}
-          onChange={handleChange}
+          type="text"
+          onChange={(e) => {setphone(e.target.value)}}
           required
           fullWidth
           margin="normal"
         />
         <TextField
-          name="email"
+          name="Faculty"
           label="Faculty"
-          type="email"
-          value={formData.email}
-          onChange={handleChange}
+          type="text"
+          onChange={(e) => {setfaculty(e.target.value)}}
           required
           fullWidth
           margin="normal"
         />
         <TextField
-          name="email"
+          name="Study Areas"
           label="Study Areas"
-          type="email"
-          value={formData.email}
-          onChange={handleChange}
+          type="text"
+          onChange={(e) => {setstudyareas(e.target.value)}}
           required
           fullWidth
           margin="normal"
         />
         <TextField
-          name="email"
+          name="Modules"
           label="Teaching Modules"
           type="email"
-          value={formData.email}
-          onChange={handleChange}
+          onChange={(e) => {setmodules(e.target.value)}}
           required
           fullWidth
           margin="normal"
         />
         {/* Add more TextField components for additional fields */}
-        <Button type="submit" variant="contained" color="primary">
+        <Button type="submit" variant="contained" color="primary" onClick={createLecturer}>
           Submit
         </Button>
       </form>

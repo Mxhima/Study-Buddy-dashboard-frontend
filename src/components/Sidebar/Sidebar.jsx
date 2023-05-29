@@ -7,6 +7,7 @@ import UsersIcon from "@mui/icons-material/PeopleAltRounded";
 import LecturersIcon from "@mui/icons-material/School";
 import AdminPeofileIcon from "@mui/icons-material/ManageAccounts";
 import { Link } from "react-router-dom";
+import { Button, Box } from "@mui/material";
 
 const Sidebar = () => {
   return (
@@ -21,25 +22,25 @@ const Sidebar = () => {
           <li>
             <DashboardIcon className="icon" />
             <span>
-              Dashboard<Link to="/"></Link>
+              <Link to="/">Dashboard</Link>
             </span>
           </li>
           <li>
             <ForumIcon className="icon" />
             <span>
-              Forum<Link to="/forum"></Link>
+              <Box component="a" href="https://forum.study-buddy.me/">Forum</Box>
             </span>
           </li>
           <li>
             <UsersIcon className="icon" />
             <span>
-              User Details<Link to="/users"></Link>
+              <Link to="/users">User Details</Link>
             </span>
           </li>
           <li>
             <LecturersIcon className="icon" />
             <span>
-              Lecturers<Link to="/lecturers"></Link>
+              <Link to="/lecturers">Lecturers</Link>
             </span>
           </li>
           <li>
@@ -51,6 +52,11 @@ const Sidebar = () => {
           <li>
             <LogOutIcon className="icon" />
             <span>Log Out</span>
+          </li>
+          <li>
+            <Button href="/lecturers">
+              lecturers
+            </Button>
           </li>
         </ul>
       </div>
